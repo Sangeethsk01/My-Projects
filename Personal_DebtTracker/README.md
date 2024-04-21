@@ -7,11 +7,11 @@ DebtTracker is a React Native mobile application designed to help users manage d
 1. **Home Screen:**
    - The Home screen presents a list of friends along with the amount owed or owed to each friend.
   
-     [homescreen](screenshots/homescreen.jpeg)
+     ![homescreen](screenshots/homescreen.jpeg)
      
    - Users can add new friends, record borrowing or lending transactions, and delete friends as needed.
 
-     [record](screenshots/record.jpeg)
+     ![record](screenshots/record.jpeg)
      
 
 1. **Transactions Screen:**
