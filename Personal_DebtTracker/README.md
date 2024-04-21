@@ -1,5 +1,6 @@
 # DebtTracker
-Repository URL: 
+
+Repository URL: https://github.com/Sangeethsk01/My-Projects/tree/main/Personal_DebtTracker
 
 ## Description:
 DebtTracker is a React Native mobile application designed to help users manage debts among friends. It facilitates tracking transactions, displaying debt balances, and maintaining a transaction history.
