@@ -20,6 +20,8 @@ DebtTracker is a React Native mobile application designed to help users manage d
 1. **Transactions Screen:**
    - The Transactions screen displays a scrollable list of all recorded transactions, including details such as the friend involved, transaction amount, and description.
    - Users can manually refresh the transaction list to see the most up-to-date information.
+  
+      <img src="screenshots/transactions.jpeg" alt="Transactions history" width="200">
 
 ## Components:
 1. **App.js:**
