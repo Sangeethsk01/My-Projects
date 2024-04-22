@@ -61,3 +61,4 @@ This project was simulated and tested using Expo Go, allowing easy access and te
 ## Contributors:
 - Sangeeth Kumar Kotagiri (kotagisr@mail.uc.edu)
 - Venkata Sai Chandan Bobbili (bobbilvn@mail.uc.edu)
+- Venna Sai Kiran Reddy (vennasy@mail.uc.edu)
