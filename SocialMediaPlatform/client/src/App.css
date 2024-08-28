@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+/* Center the post container */
+.post {
+  background-color: #ffffff; /* White background for the post */
+  border: 1px solid #ddd;    /* Light grey border */
+  border-radius: 8px;        /* Rounded corners */
+  padding-bottom: 2px;
+  margin: 16px auto;         /* Center container with automatic margins */
+  max-width: 600px;          /* Maximum width of the post */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;        /* Center-align text inside the post */
+}
+
+.post:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+
+/* Style for the title */
+.title {
+  background-color: #6f8be7;
+  font-size: 1.8em;          /* Larger font size for the title */
+  font-weight: bold;         /* Bold text */
+  color: #ffffff;            /* Blue color for the title */
+  margin-bottom: 8px;        /* Space below the title */
+}
+
+/* Style for the body */
+.body {
+  font-size: 1em;            /* Normal font size */
+  line-height: 1.5;          /* Space between lines for readability */
+  color: #333;               /* Dark grey color for the body text */
+  margin-bottom: 16px;       /* Space below the body text */
+}
+
+/* Style for the footer */
+.footer {
+  padding-right: 10px;
+  font-size: 0.875em;        /* Slightly smaller font size for the footer */
+  font-style: italic;
+  color: #555;               /* Medium grey color for the text */
+  text-align: right;        /* Center-align text in the footer */
+}
