@@ -2,6 +2,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  
 }
 
 /* Center the post container */
@@ -95,3 +96,58 @@
 span {
   color: red;
 } 
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #333333;
+  color: white;
+  position: fixed; /* Fixes the navbar at the top of the screen */
+  width: 100%; /* Full width */
+  top: 0; /* Aligns to the top of the screen */
+  left: 0; /* Aligns to the left edge */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Navbar links styling */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff6347; /* Change color on hover */
+}
+
+/* Adjust spacing below the navbar */
+body {
+  padding-top: 60px; /* Adjust based on navbar height */
+}
+
+
+/* Styling for the post page */
+.postPage {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+}
+
+/* Styling specific to left side */
+.leftside {
+  flex: 1; /* Takes up 50% of the container width */
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 20px; /* Padding inside the left side */
+}
+
+/* Styling specific to right side */
+.rightside {
+  flex: 1; /* Takes up 50% of the container width */
+  background-color: #d9d9d9; /* Slightly darker grey background */
+  padding: 20px; /* Padding inside the right side */
+}
+
+
