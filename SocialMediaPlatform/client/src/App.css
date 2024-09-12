@@ -51,7 +51,8 @@
 
 /*For the create post page*/ 
 
-.createPostPage {
+.formPage {
+  background-color: #f0f0f0;
   max-width: 500px; /* Set a maximum width for the form */
   margin: 20px auto; /* Center the form horizontally with some top and bottom margin */
   padding: 20px; /* Add padding around the form */
@@ -62,14 +63,14 @@
   border: 2px solid black; 
 }
 
-.createPostForm label {
+.formContainer label {
   display: block; /* Make labels block elements for proper spacing */
   margin-bottom: 5px; /* Space between label and input field */
   font-size: 20px; /* Font size for labels */
   font-weight: bold ;
 }
 
-.createPostForm input {
+.formContainer input {
   width: 100%; /* Full width for input fields */
   padding: 8px; /* Padding inside input fields */
   margin-bottom: 15px; /* Space below each input field */
@@ -77,7 +78,7 @@
   border-radius: 4px; /* Rounded corners */
 }
 
-.createPostForm button[type='submit'] {
+.formContainer button[type='submit'] {
   width: 100%; /* Full width for the button */
   padding: 10px; /* Padding inside the button */
   background-color: #007bff; /* Blue background color */
@@ -88,7 +89,7 @@
   cursor: pointer; /* Pointer cursor on hover */
 }
 
-.createPostForm button[type='submit']:hover {
+.formContainer button[type='submit']:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
 
@@ -178,7 +179,7 @@ body {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-right: 10px;
+  margin-right: 10px; 
 }
 
 .addCommentContainer button {
@@ -211,4 +212,54 @@ body {
 
 .comment:last-child {
   margin-bottom: 0;
+}
+
+
+/* Login Page */
+.loginForm {
+  border: 2px solid black;
+  width: 320px;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.loginForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.loginForm input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.loginForm input[type="text"],
+.loginForm input[type="password"] {
+  background-color: #fff;
+}
+
+.loginForm button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.loginForm button:hover {
+  background-color: #0056b3;
 }
