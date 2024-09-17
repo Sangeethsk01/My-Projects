@@ -15,8 +15,12 @@ function App() {
         <div className='navbar'>
         <Link to="/">Home Page</Link>
         <Link to="/createpost">Create Post </Link>
-        <Link to="login/">Login</Link>
-        <Link to="/registration">Sign Up</Link>
+        {!localStorage.getItem('accessToken') && ( 
+          <>
+          <Link to="login/">Login</Link>
+          <Link to="/registration">Sign Up</Link>
+          </>)}
+        
         </div>
         
         <Routes>

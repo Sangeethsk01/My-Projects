@@ -200,6 +200,16 @@ body {
   overflow-y: auto;
 }
 
+
+
+.comment .user {
+  font-weight: bold; /* Makes the username bold */
+  color: #007bff; /* Gives the username a distinct blue color */
+  font-size: 12px; /* Adjust the size slightly smaller than comment text */
+  margin-bottom: 5px; /* Adds some space between the username and comment body */
+  display: inline-block; /* Ensures username is inline but can be styled separately */
+}
+
 .comment {
   padding: 10px;
   margin-bottom: 10px;
@@ -213,6 +223,8 @@ body {
 .comment:last-child {
   margin-bottom: 0;
 }
+
+
 
 
 /* Login Page */

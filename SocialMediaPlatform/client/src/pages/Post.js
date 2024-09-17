@@ -27,14 +27,15 @@ function Post() {
   const addComment = () => {
     axios.post("http://localhost:3001/Comments/", {CommentBody: newComment,  postId: id },
       {
-        headers: { accessToken: sessionStorage.getItem("accessToken") },
+        headers: { accessToken: localStorage.getItem("accessToken") },
       }
     ).then((response)=>{
+      console.log(response.data);
       if(response.data.error){
         alert(response.data.error);
       }
       else {
-      const commentToAdd = {CommentBody: newComment};
+      const commentToAdd = response.data;
       setComments([...comments, commentToAdd]);
       setNewComment("");
       }
@@ -59,7 +60,10 @@ function Post() {
 
         <div className='listOfComments'>
         {comments.map((comment, key)=>{
-          return <div key= {key}className='comment'> {comment.CommentBody} </div>
+          return <div key= {key}className='comment'> 
+          <div className='user'>{comment.username}</div>
+          <div className='commentBody'>
+          {comment.CommentBody} </div></div>
         })}
         </div>
       </div>
