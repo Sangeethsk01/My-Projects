@@ -10,21 +10,39 @@ import {useEffect, useState} from "react";
 import axios from 'axios'; 
 
 function App() {
-  const [authState, setAuthState] = useState(false);
+  const [authState, setAuthState] = useState({
+    username: "",
+    id: 0,
+    status: false,
+  });
+  
 
   useEffect(()=>{
       axios.get('http://localhost:3001/auth/auth',{
         headers: { accessToken: localStorage.getItem("accessToken") },
       }).then((response)=>{
+        console.log(response.data);
         if(response.data.error){
-          setAuthState(false);
+          setAuthState({...AuthContext, status:false});
         }else{
-          setAuthState(true);
+          setAuthState({
+            username: response.data.username,
+            id: response.data.id,
+            status: true,
+          });
         }
       });
   },[]);
-  
-  return (
+
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    setAuthState({
+      username: "",
+      id: 0,
+      status: false,
+    });
+  };
+  return ( 
     <div className="App">
       <AuthContext.Provider value={{authState, setAuthState}}>
       <Router>
@@ -32,11 +50,15 @@ function App() {
         <div className='navbar'>
         <Link to="/">Home Page</Link>
         <Link to="/createpost">Create Post </Link>
-        {!authState && ( 
+        {!authState.status ? ( 
           <>
-          <Link to="login/">Login</Link>
+          <Link to="/login">Login</Link>
           <Link to="/registration">Sign Up</Link>
-          </>)} 
+          </>) : (
+            <>
+            <button onClick={logout}>Logout</button>
+            </>
+          )} 
         
         </div>
         
