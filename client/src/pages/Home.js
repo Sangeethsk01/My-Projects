@@ -7,13 +7,18 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
 
 function Home() {
-   
+    
     const [listOfPosts, setListOfPosts] = useState([]);
     const [likedPosts, setLikedPosts] = useState([]);
     let navigate = useNavigate();
     const {authState} = useContext(AuthContext);
 
   useEffect(()=> {
+    if(!authState.status){
+      navigate("/login");
+    }
+    else{
+
     // Getting list of posts
     axios.get("http://localhost:3001/posts", {headers: {accessToken: localStorage.getItem("accessToken")}}).then((response)=>{
       console.log(response.data);
@@ -24,7 +29,7 @@ function Home() {
       console.error("Error fetching posts:", error);
       // Optionally set an error state to show a message to the user
     });
-
+  }
   }, []);
 
   // Function to like a post

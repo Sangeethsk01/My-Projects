@@ -147,6 +147,10 @@ span {
   color: #ff6347; /* Change color on hover */
 }
 
+.navbar .logout {
+  background-color: none;
+}
+
 /* Adjust spacing below the navbar */
 body {
   padding-top: 60px; /* Adjust based on navbar height */

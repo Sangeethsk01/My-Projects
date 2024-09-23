@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes, Link,} from "react-router-dom";
 import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import Post from './pages/Post';
@@ -10,6 +10,7 @@ import {AuthContext} from './helpers/AuthContext';
 import {useEffect, useState} from "react";
 import axios from 'axios'; 
 
+
 function App() {
   const [authState, setAuthState] = useState({
     username: "",
@@ -17,6 +18,7 @@ function App() {
     status: false,
   });
   
+
 
   useEffect(()=>{
       axios.get('http://localhost:3001/auth/auth',{
@@ -42,6 +44,7 @@ function App() {
       id: 0,
       status: false,
     });
+  
   };
   return ( 
     <div className="App">
@@ -49,15 +52,15 @@ function App() {
       <Router>
 
         <div className='navbar'>
-        <Link to="/">Home Page</Link>
-        <Link to="/createpost">Create Post </Link>
         {!authState.status ? ( 
           <>
           <Link to="/login">Login</Link>
           <Link to="/registration">Sign Up</Link>
           </>) : (
             <>
-            <button onClick={logout}>Logout</button>
+            <Link to="/">Home Page</Link>
+            <Link to="/createpost">Create Post </Link>
+            <Link to="/login" onClick={logout}>Logout</Link>
             </>
           )} 
         
