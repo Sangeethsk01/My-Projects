@@ -1,7 +1,8 @@
 import React, {useEffect, useState, useContext} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../helpers/AuthContext';
+
 
 function Post() {
     let { id } = useParams();
@@ -9,20 +10,32 @@ function Post() {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
     const {authState} = useContext(AuthContext);
+    let navigate = useNavigate();
 
     useEffect(()=>{
         
         // Get a post by id
-        axios.get(`http://localhost:3001/posts/byId/${id}`).then((response)=>{
+        axios.get(`http://localhost:3001/posts/byId/${id}`,{headers: {accessToken: localStorage.getItem("accessToken")}}).then((response)=>{
           setPostObject(response.data)
         });
 
         // Get all comments of a post
-        axios.get(`http://localhost:3001/Comments/${id}`).then((response)=>{
+        axios.get(`http://localhost:3001/Comments/${id}`,{headers: {accessToken: localStorage.getItem("accessToken")}}).then((response)=>{
           setComments(response.data); 
         });
 
     },[id]); 
+
+  //Delete the post
+  const deletePost = () => {
+    axios.delete(`http://localhost:3001/posts/${id}`,
+      {
+        headers: { accessToken: localStorage.getItem("accessToken") },
+      }
+    ).then(()=>{
+      navigate('/');
+    })
+  }
 
 
   //Add a new comment
@@ -62,6 +75,8 @@ function Post() {
         <div className="title"> { postObject.title } </div>
         <div className="postText"> { postObject.body } </div>
         <div className="footer"> { postObject.author } </div>
+        {postObject.author === authState.username &&
+        (<button onClick={deletePost}>Delete</button>)}
       </div>
 
       <div className='rightside'>
