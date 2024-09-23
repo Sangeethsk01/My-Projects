@@ -49,7 +49,7 @@
 }
 
 
-/*For the create post page*/ 
+/*FOR THE CREATE POST PAGE*/ 
 
 .formPage {
   background-color: #f0f0f0;
@@ -131,7 +131,7 @@ body {
 }
 
 
-/* Styling for the post page */
+/* STYLING FOR THE POST PAGE */
 .postPage {
   display: flex;
   height: 100vh; /* Full height of the viewport */
@@ -152,7 +152,7 @@ body {
 }
 
 
-/* COMMENT SECTION */
+/* COMMENT SECTION IN THE POST PAGE*/
 .commentsTitle {
   padding-bottom: 10px;
   font-weight: bold;
@@ -211,6 +211,7 @@ body {
 }
 
 .comment {
+  position: relative;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
@@ -224,10 +225,24 @@ body {
   margin-bottom: 0;
 }
 
+.comment button {
+  position: absolute;
+  right: 20px;      
+  top: 50%;  
+  transform: translateY(-50%);
+  border-radius: 60%;  
+  font-size: 15px;        
+}
+
+.comment button:hover {
+  background-color: #858484;
+  color:#f0f0f0;
+}
 
 
 
-/* Login Page */
+
+/* LOGIN PAGE */
 .loginForm {
   border: 2px solid black;
   width: 320px;

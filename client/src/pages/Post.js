@@ -77,7 +77,7 @@ function Post() {
           <div className='user'>{comment.username}</div>
           <div className='commentBody'>
           {comment.CommentBody} </div>
-          {authState.status && authState.username === comment.username && <button onClick={()=>{deleteComment(comment.id)}}>X</button> }
+          {authState.status && authState.username === comment.username && <button onClick={()=>{deleteComment(comment.id)}}>x</button> }
           </div>
         })}
         </div>
