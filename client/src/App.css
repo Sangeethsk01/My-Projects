@@ -62,6 +62,10 @@
   cursor: pointer;  
 }
 
+.liked {
+  color: #297fdabf;
+}
+
 .footer button:hover {
   background-color: #007BFF;
 }
