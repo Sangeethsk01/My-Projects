@@ -27,6 +27,7 @@ function Home() {
 
   }, []);
 
+  // Function to like a post
   const likeAPost = (postId) => {
     if(!localStorage.getItem("accessToken")){
       alert("Please log in first");
