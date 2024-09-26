@@ -68,12 +68,36 @@ function Post() {
     });
   }
 
+   const editPost = (option) => {
+    if(option === "title") {
+      let newTitle = prompt("Enter New Title:");
+      if(newTitle){
+        axios.put("http://localhost:3001/posts/title",{newTitle: newTitle, id: id},{
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        }).then(()=>{
+          setPostObject({...postObject, title: newTitle});
+        });
+      }
+      
+    } else {
+      let newText = prompt("Enter New  Post:");
+      if(newText){
+        axios.put("http://localhost:3001/posts/body",{newText: newText, id: id},{
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        }).then(()=>{
+          setPostObject({...postObject, body: newText});
+        });
+      }
+    }
+   }
+
+
   return (
     <div className='postPage'>
 
       <div className='leftside'>
-        <div className="title"> { postObject.title } </div>
-        <div className="postText"> { postObject.body } </div>
+        <div className="title" onClick={()=>{ if(postObject.UserId === authState.id) {editPost("title");} }}> { postObject.title } </div>
+        <div className="postText" onClick={()=>{ if(postObject.UserId === authState.id) {editPost("body");} }}> { postObject.body } </div>
         <div className="footer"> { postObject.username } </div>
         {postObject.username === authState.username &&
         (<button onClick={deletePost}>Delete</button>)}

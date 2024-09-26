@@ -54,6 +54,20 @@ router.delete("/:postId", validateToken, async (req, res) => {
     }
 });
 
+// UPDATE POST title
+router.put("/title", validateToken, async (req,res)=>{
+     const {newTitle, id} = req.body;
+     await posts.update({title: newTitle},{where: {id:id}});
+     res.json(newTitle);
+}); 
+
+// UPDATE POST body
+router.put("/body", validateToken, async (req,res)=>{
+    const {newText, id} = req.body;
+    await posts.update({body: newText},{where: {id:id}});
+    res.json(newText);
+});
+
 
 // GET ALL POSTS OF A USER
 router.get('/byUserId/:id', async (req,res) => {
@@ -61,6 +75,9 @@ router.get('/byUserId/:id', async (req,res) => {
     const listOfPosts = await posts.findAll({where: {UserId: UserId}})
     res.json(listOfPosts);
 } );
+
+
+
 
 
 module.exports = router;
