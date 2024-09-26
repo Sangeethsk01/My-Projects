@@ -8,23 +8,24 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        author: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
         },
     });
 
     posts.associate = (models) => {
+        
         posts.hasMany(models.Comments,{
             onDelete: "cascade",
         });
-    }
 
-    posts.associate = (models) => {
         posts.hasMany(models.Likes,{
             onDelete: "cascade",
         });
     }
+
+       
 
     return posts;
 }

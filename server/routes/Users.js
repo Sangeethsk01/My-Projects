@@ -34,9 +34,27 @@ router.post("/login", async (req,res)=>{
     }) 
 });
 
-
-router.get("/auth", validateToken, (req, res)=>{
+// Authenticate user
+router.get("/user", validateToken, (req, res)=>{
     res.json(req.user);
+});
+
+//Get user by id
+router.get("/profile/:userId", async (req, res)=>{
+    try {
+        const userId = req.params.userId;
+        const user = await Users.findByPk(userId, {
+            attributes: { exclude: ['password'] }
+        });
+
+        if (user) {
+            res.json({ username: user.username });
+        } else {
+            res.status(404).json({ error: 'User not found' });
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Server error' });
+    }
 });
 
 module.exports = router;

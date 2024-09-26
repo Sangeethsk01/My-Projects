@@ -3,6 +3,7 @@ const router = express.Router()
 const { posts, Likes } = require("../models");
 const {validateToken} = require('../middlewares/AuthMiddleware');
 
+
 // GET LIST OF POSTS
 router.get("/",validateToken, async (req,res)=>{
     const listOfPosts = await posts.findAll({include: [Likes]});
@@ -23,7 +24,8 @@ router.post("/", validateToken, async (req,res)=>{
      const {title,body} = req.body;
      const newpost = { title: title,
         body: body,
-        author: req.user.username,
+        username: req.user.username,
+        UserId: req.user.id,
      }
      await posts.create(newpost);
      res.json(newpost);
@@ -37,7 +39,7 @@ router.delete("/:postId", validateToken, async (req, res) => {
     const post = await posts.findOne({
         where: {
             id: postId,
-            author: username
+            username: username
         }
     });
     if (post){
@@ -51,6 +53,14 @@ router.delete("/:postId", validateToken, async (req, res) => {
         res.json("Not authorized");
     }
 });
+
+
+// GET ALL POSTS OF A USER
+router.get('/byUserId/:id', async (req,res) => {
+    const UserId = req.params.id;
+    const listOfPosts = await posts.findAll({where: {UserId: UserId}})
+    res.json(listOfPosts);
+} );
 
 
 module.exports = router;

@@ -10,17 +10,23 @@ module.exports = (sequelize, DataTypes) => {
         },
     }); 
 
-    // Users.associate = (models) => {
-    //     Users.hasMany(models.posts,{
-    //         onDelete: "cascade",
-    //     });
-    // };
 
     Users.associate = (models) => {
-        Users.hasMany(models.Likes,{
+        // Association with Posts
+        Users.hasMany(models.posts, {
             onDelete: "cascade",
         });
-    }
+
+        // Association with Likes
+        Users.hasMany(models.Likes, {
+            onDelete: "cascade",
+        });
+
+        // Association with Comments
+        Users.hasMany(models.Comments, {
+            onDelete: "cascade",
+        });
+    };
 
 
     return Users;

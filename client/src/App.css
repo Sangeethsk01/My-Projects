@@ -316,3 +316,10 @@ body {
 .loginForm button:hover {
   background-color: #0056b3;
 }
+
+
+/* USER PROFILE PAGE*/
+.profilePageContainer h2 {
+  text-align: left;
+  margin-left: 80px;
+}

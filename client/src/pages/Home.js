@@ -30,7 +30,7 @@ function Home() {
       // Optionally set an error state to show a message to the user
     });
   }
-  }, []);
+  }, [navigate]);
 
   // Function to like a post
   const likeAPost = (postId) => {
@@ -71,7 +71,7 @@ function Home() {
           return <div key={key} className='post'>
                     <div className='title'>{value.title}</div>
                     <div className='body' onClick={()=>{navigate(`/post/${value.id}`)}}>{value.body}</div>
-                    <div className='footer'>{value.author}
+                    <div className='footer'><div onClick={()=>{navigate(`/profile/${value.UserId}`)}}>{value.username}</div>
                      <ThumbUpIcon onClick={()=>{likeAPost(value.id)}} className={likedPosts.includes(value.id) ? "liked" : "unliked "}/> 
                     <label>{value.Likes.length}</label></div>
                    
