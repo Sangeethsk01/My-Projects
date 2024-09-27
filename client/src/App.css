@@ -70,6 +70,18 @@
   background-color: #007BFF;
 }
 
+.profile-link {
+  position: absolute;
+  top: 50px;  /* Distance from the top of the page */
+  right: 10px;  /* Distance from the right of the page */
+  text-decoration: none;  /* Remove underline from the link */
+  padding: 5px 10px;  /* Add padding for a clickable area */
+  background-color: #3a97fc;  /* Background color (blue) */
+  color: white;  /* Text color */
+  border-radius: 5px;  /* Rounded corners */
+  font-weight: bold;  /* Make the text bold */
+}
+
 
 /*FOR THE CREATE POST PAGE*/ 
 
@@ -380,6 +392,7 @@ body {
 
 /* Button Styles */
 .changePasswordContainer button {
+  margin-top: 20px;
   width: 100%; /* Full width for the button */
   padding: 10px; /* Padding for the button */
   background-color: #4c74af; /* Green background */

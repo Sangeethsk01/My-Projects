@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios"; 
 import { useEffect, useState, useContext } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from '../helpers/AuthContext';
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
@@ -62,6 +62,7 @@ function Home() {
 
   return (
     <div>
+      <Link to={`/profile/${authState.id}`} className='profile-link'>My Profile</Link>
       {authState.status && (
         <h2 className='welcomemsg'> Hello, {authState.username}</h2>
       )}

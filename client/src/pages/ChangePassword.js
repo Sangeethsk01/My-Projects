@@ -22,8 +22,12 @@ const updatePassword = () =>{
         oldPassword: oldPassword,
         newPassword: newPassword,
     }, {headers: {accessToken: localStorage.getItem("accessToken")}}).then((response)=> {
-        alert(response.data);
+        if(response.data.error){
+            alert(response.data.error);
+        }else{
+            alert(response.data);
         navigate('/');
+        }
     })
 }
 
