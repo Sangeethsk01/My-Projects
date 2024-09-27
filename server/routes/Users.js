@@ -57,4 +57,19 @@ router.get("/profile/:userId", async (req, res)=>{
     }
 });
 
+
+  //Change password 
+  router.put('/changepassword',validateToken, async (req, res) => {
+    const {oldPassword, newPassword} = req.body;
+    const userId = req.user.id;
+    const user = await Users.findOne({where:{id: userId}});
+    const match = await bcrypt.compare(oldPassword, user.password)
+    if(!match) return res.json({error:"Incorrect password"});
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    await Users.update({password: hashedPassword }, {where: {id:userId}});
+    res.json("UPDATED SUCCESSFULLY");
+
+  })
+
 module.exports = router;

@@ -1,12 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import axios from 'axios';
+import { AuthContext } from '../helpers/AuthContext';
 
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 function Profile() {
     let { id } = useParams();
     const [username, setUsername] = useState("");
     const [listOfPosts, setListOfPosts] = useState([]);
+    const {authState} = useContext(AuthContext);
+    let navigate = useNavigate();
 
     useEffect(()=> {
         // GET USERNAME
@@ -28,6 +31,7 @@ function Profile() {
     <div className='profilePageContainer'>
         <div className='basicInfo'>
             <h1>Username: {username}</h1>
+            {authState.username === username && <button onClick={()=>{navigate("/changepassword")}}> Change Password</button>}
         </div>
         <div className='listOfPosts'>
         <h2>Posts ({listOfPosts.length})</h2>

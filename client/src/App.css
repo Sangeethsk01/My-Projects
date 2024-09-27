@@ -319,7 +319,77 @@ body {
 
 
 /* USER PROFILE PAGE*/
-.profilePageContainer h2 {
+.basicInfo {
   text-align: left;
   margin-left: 80px;
 }
+
+.basicInfo button {
+  background-color: #3982d1; /* Green background */
+  color: white;              /* White text */
+  padding: 5px 10px;        /* Padding for a better look */
+  border: none;              /* Remove default border */
+  border-radius: 5px;        /* Rounded corners */
+  font-size: 15px;           /* Increase font size */
+  cursor: pointer;           /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.listOfPosts h2 {
+  text-align: left;
+  margin-left: 80px;
+}
+
+
+/* CHANGE PASSWORD PAGE */
+.changePasswordContainer {
+  margin: 50px auto; /* Center the container with top margin */
+  padding: 20px 35px; /* Padding inside the container */
+  padding-right: 55px;
+  background-color: rgba(228, 227, 227, 0.629); /* White background for the container */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  
+  display: flex;               /* Use flexbox layout */
+  flex-direction: column;      /* Stack child elements vertically */
+  align-items: stretch;        /* Make child elements full width */
+  text-align: left;
+}
+
+/* Header Styles */
+.changePasswordContainer h1 {
+  font-size: 1.8em; /* Size for main header */
+  margin-bottom: 20px; /* Spacing below header */
+  text-align: center; /* Center align the header */
+}
+
+/* Label Styles */
+.changePasswordContainer label {
+  display: block; /* Each label occupies a full line */
+  margin: 10px 0 5px; /* Spacing around labels */
+}
+
+/* Input Styles */
+.changePasswordContainer input[type="text"] {
+  width: 100%; /* Full width of the parent container */
+  padding: 10px; /* Padding inside the input */
+  margin-bottom: 15px; /* Spacing below inputs */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Slightly rounded corners */
+}
+
+/* Button Styles */
+.changePasswordContainer button {
+  width: 100%; /* Full width for the button */
+  padding: 10px; /* Padding for the button */
+  background-color: #4c74af; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.changePasswordContainer button:hover {
+  background-color: #6389cf; /* Darker green on hover */
+}
+
