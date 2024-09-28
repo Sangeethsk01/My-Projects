@@ -55,8 +55,13 @@
 
 [product-screenshot](images/homePage.png)
 
-This is a  
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+This full-stack web application serves as a basic social media platform, allowing users to create accounts, log in, post content, and interact with others by liking or commenting on posts. The application provides a seamless user experience, offering essential features that users expect in a social networking environment.
+
+The user data is stored in MySQL, with Sequelize employed as an ORM to facilitate interactions with the database. For secure user authentication, JSON Web Tokens (JWT) are implemented, ensuring that only authorized users can access certain functionalities of the platform.
+
+On the front end, the application is built using React and its associated libraries, providing a dynamic and responsive interface. The backend is powered by Express.js and Sequelize, ensuring smooth communication between the client and the server.
+
+The application uses the Axios library to handle API requests, enabling efficient and reliable communication between the front and back end.<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -104,10 +109,15 @@ This is an example of how to list things you need to use the software and how to
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Create an account with a username and password
+- [ ] Login 
+- [ ] Create a post using create post link on the nav bar
+    - [ ] Enter post text
+- [ ] Like a post on home page
+- [ ] Click on a post to see its comments
+    - [ ] Add a comment to the post
+- [ ] Click on my profile to access your posts
+    - [ ] Use change password button to update password
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
