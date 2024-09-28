@@ -63,18 +63,18 @@ function Home() {
   return (
     <div>
       <Link to={`/profile/${authState.id}`} className='profile-link'>My Profile</Link>
-      {authState.status && (
-        <h2 className='welcomemsg'> Hello, {authState.username}</h2>
-      )}
+      
 
        {
         listOfPosts.map((value, key) => {
           return <div key={key} className='post'>
                     <div className='title'>{value.title}</div>
                     <div className='body' onClick={()=>{navigate(`/post/${value.id}`)}}>{value.body}</div>
-                    <div className='footer'><div onClick={()=>{navigate(`/profile/${value.UserId}`)}}>{value.username}</div>
-                     <ThumbUpIcon onClick={()=>{likeAPost(value.id)}} className={likedPosts.includes(value.id) ? "liked" : "unliked "}/> 
-                    <label>{value.Likes.length}</label></div>
+                    <div className='footer'>
+                      <div onClick={()=>{navigate(`/profile/${value.UserId}`)}}>{value.username}</div>
+                      <ThumbUpIcon onClick={()=>{likeAPost(value.id)}} className={likedPosts.includes(value.id) ? "liked" : "unliked "}/> 
+                      <label>{value.Likes.length}</label>
+                    </div>
                    
                     
                     

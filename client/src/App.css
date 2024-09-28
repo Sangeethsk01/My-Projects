@@ -5,7 +5,8 @@
   
 }
 
-/* Center the post container */
+
+/* HOME PAGE */
 .post {
   background-color: #ffffff; /* White background for the post */
   border: 1px solid #ddd;    /* Light grey border */
@@ -41,8 +42,8 @@
 
 /* Style for the footer */
 .footer {
-  display: flex;   
-  justify-content: space-between; /* Space between items */
+  display: flex;  
+  position: relative; 
   align-items: center;  
   padding-left: 10px;
   padding-right: 10px;
@@ -64,6 +65,18 @@
 
 .liked {
   color: #297fdabf;
+  position: absolute;
+  right: 30px;
+}
+
+.unliked {
+  position: absolute;
+  right: 30px;
+}
+
+.footer label {
+  position: absolute;
+  right: 10px;
 }
 
 .footer button:hover {
@@ -135,15 +148,16 @@ span {
 /* Navbar styling */
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Distribute space between left and right sections */
+  align-items: center; /* Vertically align items */
   padding: 10px 20px;
   background-color: #333333;
   color: white;
-  position: fixed; /* Fixes the navbar at the top of the screen */
+  position: fixed;
   width: 100%; /* Full width */
   top: 0; /* Aligns to the top of the screen */
-  left: 0; /* Aligns to the left edge */
-  z-index: 1000; /* Ensure it appears above other content */
+  left: 0;
+  z-index: 1000;
 }
 
 /* Navbar links styling */
@@ -159,11 +173,29 @@ span {
   color: #ff6347; /* Change color on hover */
 }
 
-.navbar .logout {
-  background-color: none;
+/* Left section styling */
+.navbar .left {
+  display: flex;
+  gap: 15px; /* Optional: Adds space between links */
 }
 
-/* Adjust spacing below the navbar */
+/* Right section styling */
+.navbar .right {
+  display: flex;
+  align-items: center; /* Vertically center content */
+  gap: 15px; /* Adds space between the welcome message and logout link */
+  padding-right: 20px;
+}
+
+/* Welcome message styling */
+.navbar .welcomemsg {
+  margin-right: 15px; /* Add some space before logout link */
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+}
+
+/* Body padding to prevent content from going under the navbar */
 body {
   padding-top: 60px; /* Adjust based on navbar height */
 }
