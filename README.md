@@ -4,9 +4,6 @@
 <br />
 <div align="center">
   <a href="https://github.com/Sangeethsk01/SocialMediaPlatform>
-   <div align="center">
-  <img src="images/homePage.png" alt="product-screenshot" width="400" />
-</div>
   </a>
 
 <h3 align="center">Social Media Platform</h3>
