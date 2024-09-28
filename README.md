@@ -53,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![product-screenshot](images/homePage.png)
+<img src="images/homePage.png" alt="product-screenshot" width="400" />
 
 This full-stack web application serves as a basic social media platform, allowing users to create accounts, log in, post content, and interact with others by liking or commenting on posts. The application provides a seamless user experience, offering essential features that users expect in a social networking environment.
 
