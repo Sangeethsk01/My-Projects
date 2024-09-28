@@ -144,7 +144,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Sangeeth Kumar Kotagiri - [@twitter_handle](https://twitter.com/twitter_handle) - sangeethsk01@gmail.com
 
 Project Link: [https://github.com/Sangeethsk01/SocialMediaPlatform](https://github.com/Sangeethsk01/SocialMediaPlatform)
 
