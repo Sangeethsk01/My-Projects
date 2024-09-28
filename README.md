@@ -154,10 +154,7 @@ Project Link: [https://github.com/Sangeethsk01/SocialMediaPlatform](https://gith
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-* []()
-* []()
-* []()
+* [PedroTech](https://github.com/machadop1407/FullStack-Course/tree/Episode14)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
