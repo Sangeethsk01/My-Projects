@@ -10,12 +10,12 @@
 <h3 align="center">Social Media Platform</h3>
 
   <p align="center">
-    project_description
+    A basic example of a working full-stack project with CRUD operations.
     <br />
-    <a href="[https://github.com/github_username/repo_name](https://github.com/Sangeethsk01/SocialMediaPlatform)"><strong>Explore the docs »</strong></a>
+    <a href="[https://github.com/Sangeethsk01/SocialMediaPlatform](https://github.com/Sangeethsk01/SocialMediaPlatform)"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/Sangeethsk01/SocialMediaPlatform">View Demo</a>
     <!-- Report Bug -->
     <!-- Request Feature -->
   </p>
